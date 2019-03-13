@@ -2,7 +2,7 @@
 
 Any rtttl library is based on the arduino tone() functionality, which is not (yet) available for ESP32.
 
-This library plays rtttl files and is based on the [ESP32-hal-ledc](https://github.com/espressif/arduino-esp32/blob/a4305284d085caeddd1190d141710fb6f1c6cbe1/cores/esp32/esp32-hal-ledc.h) PWM module.
+This library plays rtttl files based on [NonBlockingRTTTL](https://github.com/end2endzone/NonBlockingRTTTL) and is based on the [ESP32-hal-ledc](https://github.com/espressif/arduino-esp32/blob/a4305284d085caeddd1190d141710fb6f1c6cbe1/cores/esp32/esp32-hal-ledc.h) PWM module.
 
 # Usage
 ```
