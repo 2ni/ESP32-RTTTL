@@ -2,7 +2,7 @@
 
 Any rtttl library is based on the arduino tone() functionality, which is not (yet) available for ESP32.
 
-This library plays rtttl files based on [NonBlockingRTTTL](https://github.com/end2endzone/NonBlockingRTTTL) and is based on the [ESP32-hal-ledc](https://github.com/espressif/arduino-esp32/blob/a4305284d085caeddd1190d141710fb6f1c6cbe1/cores/esp32/esp32-hal-ledc.h) PWM module.
+This library plays rtttl files on a ESP32. [NonBlockingRTTTL](https://github.com/end2endzone/NonBlockingRTTTL) was used as a base but a lot was changed also. For pwm output generation [ESP32-hal-ledc](https://github.com/espressif/arduino-esp32/blob/a4305284d085caeddd1190d141710fb6f1c6cbe1/cores/esp32/esp32-hal-ledc.h) is used.
 
 # Usage
 ```
@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
   if (!rtttl.isPlaying()) {
-    rtttl.loadSong(macgyver, 5); // song and volume. Good values are ~5-30
+    rtttl.loadSong(macgyver, 5); // 2nd value is the volume.  Try values between ~5-30.
     delay(2000);
   } else {
     rtttl.play();
