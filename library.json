@@ -1,0 +1,29 @@
+{
+    "name": "ESP32-RTTL",
+    "version": "1.0",
+    "keywords": [
+        "other"
+    ],
+    "description": "A library that plays Rtttl melodies on an ESP32",
+    "frameworks": [
+        "arduino"
+    ],
+    "platforms": [
+        "espressif32"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/2ni/ESP32-RTTTL"
+    },
+    "homepage": null,
+    "export": {
+        "include": null,
+        "exclude": [
+            "extras",
+            "docs",
+            "tests",
+            "test",
+            "*.pdf"
+        ]
+    }
+}
