@@ -128,7 +128,8 @@ public:
   void stop();
   bool isPlaying();
   bool done();
-
+  void setVolume(const int volume) { this->volume = volume; };
+  int getVolume() { return this->volume; };
 };
 
 #endif
