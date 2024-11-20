@@ -121,7 +121,7 @@ private:
   void tone(int frq, int duration);
 
 public:
-  RTTTL(const byte pin, const int channel);
+  RTTTL(const byte pin);
   void loadSong(const char *song);
   void loadSong(const char *song, const int volume);
   void play();
