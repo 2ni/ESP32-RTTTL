@@ -17,15 +17,13 @@ RTTTL rtttl(BUZZER_PIN);
 
 void setup() {
   Serial.begin(115200);
-  while(!Serial) { }
+  while(!Serial);
 }
 
 void loop() {
   if (!rtttl.isPlaying()) {
     rtttl.loadSong(silentnight, 15); // 2nd value is the volume.  Try values between ~5-30.
     delay(2000);
-  } else {
-    rtttl.play();
-  }
+  } else rtttl.play();
 }
 ```
