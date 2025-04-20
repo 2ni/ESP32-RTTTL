@@ -28,12 +28,14 @@ const char *silentnight = "SilentNight:d=4,o=5,b=112:g.,8a,g,2e.,g.,8a,g,2e.,2d6
 
 RTTTL rtttl(BUZZER_PIN);
 
-void setup() {
+void setup() 
+{
   Serial.begin(115200);
   while(!Serial);
 }
 
-void loop() {
+void loop() 
+{
   if (!rtttl.isPlaying()) {
     rtttl.loadSong(silentnight, 15); // 2nd value is the volume.  Try values between ~5-30.
     delay(2000);
