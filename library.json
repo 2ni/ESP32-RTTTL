@@ -1,6 +1,6 @@
 {
-    "name": "ESP32-RTTL",
-    "version": "1.2",
+    "name": "ESP32-RTTTL",
+    "version": "1.3",
     "description": "A library that plays RTTTL melodies on an ESP32",
     "keywords": "other, rtttl, melody, esp32, music",
     "repository":
