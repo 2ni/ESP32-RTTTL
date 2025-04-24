@@ -3,17 +3,19 @@
  * ported from https://github.com/end2endzone/NonBlockingRTTTL
  *
  * using ledc functionality of Arduino ESP32
+ *
+ * Creator: https://github.com/2ni
+ * 
+ * Edited: 20.11.2024 by Erik Tóth (https://github.com/erik-toth)
  */
 
 #include "Arduino.h"
 #include "RTTTL.h"
 
-RTTTL::RTTTL(const byte pin, const int channel) {
+RTTTL::RTTTL(const byte pin) {
   this->pin = pin;
-  this->channel = channel;
 
-  ledcSetup(channel, 1000, 10); // resolution always seems to be 10bit, no matter what is given
-  ledcAttachPin(pin, channel);
+  ledcAttach(pin, 1000, 10);
 }
 
 void RTTTL::loadSong(const char *song) {
@@ -73,12 +75,13 @@ void RTTTL::loadSong(const char *song, const int volume) {
 }
 
 void RTTTL::noTone() {
-  ledcWrite(channel, 0);
+  ledcWrite(pin, 0);
 }
 
 void RTTTL::tone(int frq, int duration) {
-  ledcWriteTone(channel, frq);
-  ledcWrite(channel, volume);
+  ledcWriteTone(pin, frq);
+  ledcWrite(pin, volume);
+
   delay(duration);
 }
 
