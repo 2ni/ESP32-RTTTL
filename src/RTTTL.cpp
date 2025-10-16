@@ -68,7 +68,7 @@ void RTTTL::loadSong(const char *song, const int volume) {
     if (*buffer == ':') buffer++;
   }
 
-  wholenote = (60 * 1000L / bpm) * 2;
+  wholenote = (60 * 1000L / bpm) * 4;
 }
 
 void RTTTL::noTone() {
@@ -139,6 +139,15 @@ void RTTTL::nextNote() {
     scale = defaultOct;
   }
   scale += OCTAVE_OFFSET;
+
+  // now, get optional '.' dotted note again.
+  // A dot /after/ the octave is allowed too, depending on which
+  // RTTTL specification you read.
+  // See https://github.com/end2endzone/NonBlockingRTTTL/issues/10
+  if (*buffer == '.') {
+    duration += duration / 2;
+    buffer++;
+  }
 
   if (*buffer == ',') buffer++;
 
